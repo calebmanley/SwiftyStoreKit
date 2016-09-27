@@ -33,7 +33,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 	
 	    for completedTransaction in completedTransactions {
 	
-	        if completedTransaction.transactionState == .Purchased || completedTransaction.transactionState == .Restored {
+	        if completedTransaction.transactionState == .purchased || completedTransaction.transactionState == .restored {
 	
 	            print("purchased: \(completedTransaction.productId)")
 	        }
@@ -138,7 +138,7 @@ SwiftyStoreKit.verifyReceipt() { result in
         case .notPurchased:
             print("The user has never purchased this product")
         }
-    case .Error(let error):
+    case .error(let error):
         print("Receipt verification failed: \(error)")
     }
 }
